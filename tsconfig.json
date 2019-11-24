@@ -1,27 +1,3 @@
 {
-	"compileOnSave": true,
-	"compilerOptions": {
-		"module": "commonjs",
-		"target": "es5",
-		"esModuleInterop": true,
-		"allowSyntheticDefaultImports": true,
-		"baseUrl": "./",
-		"sourceMap": true,
-		"downlevelIteration": true,
-		"experimentalDecorators": true,
-		"outDir": "lib",
-		"strict": true,
-		"noImplicitReturns": true,
-		"typeRoots": [
-			"node_modules/@types"
-		],
-		"lib": [
-			"es2018",
-			"dom"
-		]
-	},
-	"angularCompilerOptions": {
-		"fullTemplateTypeCheck": false,
-		"strictInjectionParameters": true
-	}
+	"extends": "./node_modules/pxserver-core/tsconfig.json"
 }
