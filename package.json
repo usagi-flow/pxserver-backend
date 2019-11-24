@@ -4,27 +4,37 @@
 	"description": "pxserver",
 	"author": "etienne-k",
 	"license": "GPL-3.0-or-later",
-	"main": "run/start.js",
+	"main": "lib/module",
+	"module": "lib/module",
 	"scripts": {
-		"build": "yarn run build-ts && yarn run copy-assets",
-		"build-ts": "tsc --pretty",
-		"watch-ts": "tsc --pretty -w",
-		"copy-assets": "ts-node -T copy-assets.ts",
-		"start": "node ."
+		"start": "node lib/main",
+		"watch": "concurrently -n \"build,runtime\" \"webpack --watch\" \"nodemon lib/main\"",
+		"build": "webpack",
+		"clean": "rm -rf dist lib"
 	},
+	"files": [
+		"lib/**/*",
+		"webpack.*",
+		"tsconfig.*"
+	],
 	"dependencies": {
 		"@types/redis": "^2.8.13",
+		"express": "^4.17.1",
 		"redis": "^2.8.0",
 		"socket.io": "^2.2.0"
 	},
 	"devDependencies": {
 		"@types/express": "^4.16.1",
 		"@types/node": "^11.9.6",
-		"@types/shelljs": "^0.8.5",
 		"@types/socket.io": "^2.1.2",
-		"shelljs": "^0.8.3",
-		"ts-node": "^8.0.2",
-		"tslint": "^5.13.1",
-		"typescript": "^3.3.3333"
+		"@types/webpack": "^4.41.0",
+		"concurrently": "^5.0.0",
+		"nodemon": "^2.0.1",
+		"ts-loader": "^6.2.1",
+		"ts-node": "^8.5.0",
+		"typescript": "^3.7.0",
+		"webpack": "^4.41.2",
+		"webpack-cli": "^3.3.10",
+		"webpack-node-externals": "^1.7.2"
 	}
 }
