@@ -1,3 +1,3 @@
-import * as px from "./module";
+import ServerStarter from "./server-starter";
 
-px.ServerStarter.start(__dirname);
+ServerStarter.start(__dirname);

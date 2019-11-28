@@ -1,4 +1,4 @@
-import core from "pxserver-core";
+import * as core from "pxserver-core";
 
 export default class ServerStarter extends core.AbstractServerStarter
 {
