@@ -19,7 +19,7 @@
 	],
 	"dependencies": {
 		"@types/redis": "^2.8.13",
-		"express": "^4.17.1",
+		"express": "^4.17.3",
 		"pxserver-core": "link:../pxserver-core",
 		"redis": "^2.8.0",
 		"socket.io": "^2.2.0"
